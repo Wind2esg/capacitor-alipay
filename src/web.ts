@@ -13,6 +13,13 @@ export class AlipayWeb extends WebPlugin implements AlipayPlugin {
     console.log('ECHO', options);
     return options;
   }
+
+  async pay(orderInfo: string): Promise<{result: number, payResult: string}> {
+    console.log(orderInfo);
+    //send request to api to get qrcode, scan to pay
+    return new Promise(()=>({result: 0, payResult: "0"}))
+  }
+
 }
 
 const Alipay = new AlipayWeb();
