@@ -1,6 +1,6 @@
 {
   "name": "capacitor-alipay",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "capacitor plugin for alipay",
   "main": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
