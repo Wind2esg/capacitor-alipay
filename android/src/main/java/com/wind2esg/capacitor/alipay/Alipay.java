@@ -41,14 +41,14 @@ public class Alipay extends Plugin {
                      */
                     String resultInfo = payResult.getResult();// 同步返回需要验证的信息
                     String resultStatus = payResult.getResultStatus();
-                    json.put("payResult", resultInfo);
+                    json.put("result", resultInfo);
                     // 判断resultStatus 为9000则代表支付成功
                     if (TextUtils.equals(resultStatus, "9000")) {
                         // 该笔订单是否真实支付成功，需要依赖服务端的异步通知。
-                        json.put("result", 0);
+                        json.put("payResult", 0);
                     } else {
                         // 该笔订单真实的支付结果，需要依赖服务端的异步通知。
-                        json.put("result", -1);                    
+                        json.put("payResult", -1);                    
                     }
                     break;
                 }
@@ -56,16 +56,16 @@ public class Alipay extends Plugin {
                     @SuppressWarnings("unchecked")
                     AuthResult authResult = new AuthResult((Map<String, String>) msg.obj, true);
                     String resultStatus = authResult.getResultStatus();
-                    json.put("payResult", authResult);
+                    json.put("result", authResult);
                     // 判断resultStatus 为“9000”且result_code
                     // 为“200”则代表授权成功，具体状态码代表含义可参考授权接口文档
                     if (TextUtils.equals(resultStatus, "9000") && TextUtils.equals(authResult.getResultCode(), "200")) {
                         // 获取alipay_open_id，调支付时作为参数extern_token 的value
                         // 传入，则支付账户为该授权账户
-                        json.put("result", 0);
+                        json.put("payResult", 0);
                     } else {
                         // 其他状态值则为授权失败
-                        json.put("result", -1);  
+                        json.put("payResult", -1);  
                     }
                     break;
                 }
@@ -95,7 +95,7 @@ public class Alipay extends Plugin {
             public void run() {
                 PayTask alipay = new PayTask(getActivity());
                 Map<String, String> result = alipay.payV2(orderInfo, true);
-                Log.i("msp", result.toString());
+                Log.i("capacitor-alipay", result.toString());
 
                 Message msg = new Message();
                 msg.what = SDK_PAY_FLAG;
@@ -117,7 +117,7 @@ public class Alipay extends Plugin {
             public void run() {
                 PayTask alipay = new PayTask(getActivity());
                 Map<String, String> result = alipay.payV2(authInfo, true);
-                Log.i("msp", result.toString());
+                Log.i("capacitor-alipay", result.toString());
 
                 Message msg = new Message();
                 msg.what = SDK_AUTH_FLAG;

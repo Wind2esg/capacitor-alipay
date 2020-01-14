@@ -25,7 +25,14 @@ export class AlipayWeb extends WebPlugin {
         return __awaiter(this, void 0, void 0, function* () {
             console.log(orderInfo);
             //send request to api to get qrcode, scan to pay
-            return new Promise(() => ({ result: 0, payResult: "0" }));
+            return new Promise(() => ({ result: 0, payResult: "web" }));
+        });
+    }
+    auth(authInfo) {
+        return __awaiter(this, void 0, void 0, function* () {
+            console.log(authInfo);
+            //send request to api to get qrcode, scan to pay
+            return new Promise(() => ({ result: 0, payResult: "web" }));
         });
     }
 }

@@ -9,7 +9,15 @@ export interface AlipayPlugin {
     }): Promise<{
         value: string;
     }>;
-    pay(orderInfo: string): Promise<{
+    pay(orderInfo: {
+        orderInfo: string;
+    }): Promise<{
+        result: number;
+        payResult: string;
+    }>;
+    auth(authInfo: {
+        authInfo: string;
+    }): Promise<{
         result: number;
         payResult: string;
     }>;
