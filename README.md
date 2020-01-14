@@ -56,7 +56,7 @@ TBD
 >  `code`, 0 for success, -1 for failure.  
 >  `result`, detail result
 
-For more infomation, plz refer to [alipay official wiki](https://docs.open.alipay.com/204/105296/)  
+> For more infomation, plz refer to [alipay official wiki](https://docs.open.alipay.com/204/105296/)  
 
 ## Related link
 [capacitor 支付宝插件](https://github.com/Wind2esg/capacitor-alipay)  
