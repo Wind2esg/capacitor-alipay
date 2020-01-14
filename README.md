@@ -52,9 +52,9 @@ TBD
   + param: `{orderInfo: string}`
   + return: `{payResult: string, result: string}`
 
-+  `orderInfo` and `authInfo` is string return from your api.
-+  `code`, 0 for success, -1 for failure.
-+  `result`, detail result
+>  `orderInfo` and `authInfo` is string return from your api.  
+>  `code`, 0 for success, -1 for failure.  
+>  `result`, detail result
 
 For more infomation, plz refer to [alipay official wiki](https://docs.open.alipay.com/204/105296/)  
 
