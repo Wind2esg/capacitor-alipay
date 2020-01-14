@@ -45,15 +45,19 @@ For more infomation, plz refer to [alipay official wiki](https://docs.open.alipa
 TBD  
 
 ## API
-| call | param | return | 
-| -| - | - | - |
-|`pay()`| {orderInfo: "orderInfo"} | {payResult: "code", result: "result"} | 
-|`auth()`| {authInfo: "authInfo"} | {payResult: "code", result: "result"} | 
++ `pay`
+  + param: `{orderInfo: string}`
+  + return: `{payResult: string, result: string}`
++ `auth`
+  + param: `{orderInfo: string}`
+  + return: `{payResult: string, result: string}`
 
 +  `orderInfo` and `authInfo` is string return from your api.
 +  `code`, 0 for success, -1 for failure.
 +  `result`, detail result
-  
+
+For more infomation, plz refer to [alipay official wiki](https://docs.open.alipay.com/204/105296/)  
+
 ## Related link
 [capacitor 支付宝插件](https://github.com/Wind2esg/capacitor-alipay)  
 [capacitor-alipay](https://github.com/Wind2esg/capacitor-alipay)  
